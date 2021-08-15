@@ -14,5 +14,4 @@ internal class K8sExplorerWindowFactory : ToolWindowFactory, DumbAware {
         val content = explorer.createToolWindowContent(toolWindow)
         contentManager.addContent(content)
     }
-
 }
