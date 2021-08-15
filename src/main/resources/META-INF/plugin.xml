@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.github.fsev.k8sswapper</id>
-    <name>k8s-swapper</name>
-    <vendor>f-sev</vendor>
+    <name>K8s Swapper</name>
+    <vendor email="fedotov.sev@mail.ru" url="https://fsev.tech/">Sergei Fedotov</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -9,11 +9,14 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.fsev.k8sswapper.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.fsev.k8sswapper.services.MyProjectService"/>
+
+        <toolWindow id="K8s Swapper" anchor="right" icon="K8sSwapperIcons.Icons.K8sSwapper" secondary="true"
+                    doNotActivateOnStart="true"
+                    factoryClass="com.github.fsev.k8sswapper.ui.explorer.K8sExplorerWindowFactory"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.fsev.k8sswapper.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+        <listener class="com.github.fsev.k8sswapper.listeners.StartupListener"
+                  topic="com.intellij.ide.AppLifecycleListener"/>
     </applicationListeners>
 </idea-plugin>
