@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.fsev.k8sswapper.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.fsev.k8sswapper.MyBundle
 
 class MyApplicationService {
 
